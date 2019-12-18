@@ -30,10 +30,21 @@ body {
 }
 </style>
 
+ <script>
+		$(document).ready(function(){
+				$("#page_title").fadeIn(1000,function(){
+				$("#basic").fadeIn(1000);
+				$("#media").fadeIn(1000);
+			});
+		});
+	</script>
 
 </head>
 <body>
   
+ 
+
+
 <script type="text/javascript">
 
 var container;
@@ -194,8 +205,11 @@ function render() {
 <div id="back_home" class="back_home"><a href="./index.html">HOME</a></div>
  
 </div>
-  <div style="position: absolute;top: 13%;left: 20%" >
+  <div id="media" class="contact_contener" style="position: absolute;top: 13%;left: 20%" display: block;>
 <h3>CONTACT ME</h3>
+  
+ 
+
   </div>
  
  <div style="position: absolute;top: 16%;left: 20%" >
@@ -210,20 +224,36 @@ function render() {
 </div>
 
 
-<div style="position: absolute;top: 20%;right: 20%">
+<div style="position: absolute;top: 20%;right: 18%">
 <div class="index_contener" style="display:block;">
   
- <img   src="./po/wei xin.png" height="60px">
- <img   src="./po/QQ.png" height="60px">
+
+  <div style="width:33%; float:left">
+  	 <img class="social" id="wechat_link" src="./po/wei xin.png" style="cursor:pointer;" ></div>
+  
+ 
+
+
+
+
+   <div style="width:24%; float:left"><a target="social"id="wechat_link"><img class="social" src="./po/QQ.png"></a></div>
+ 
+   
+ <div id="wechat_QR" class="wechat" style="display: none">
+		<img src="./po/wei.png" style="position:absolute; margin:auto; top:0; left:0; bottom:0;right:0;">
+	</div>
   
 
+<script>
+		$( "#wechat_link" ).click(function() {
+			$("#wechat_QR").fadeIn(2000);
+			// console.log("click");
+		});
+		$("#wechat_QR").click(function(){
+			$(this).fadeOut(1000);
 
- </a>
-
-
-</div>
-
-
-
+		});
+	</script>
+ 
 </body>
 </html>
